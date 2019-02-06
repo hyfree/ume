@@ -22,7 +22,7 @@ namespace ume
             var t = DateTime.Now.AddMilliseconds(100);
             while (DateTime.Now < t) Application.DoEvents();
         }
-        public void files()
+        public void Files()
         {
             string path = @"C:\Users\Administrator\AppData\Local\Temp";
             string[]t=Directory.GetFiles(path);
@@ -178,7 +178,7 @@ namespace ume
 
                 i = 0;
                 f = 1;
-                files();
+                //Files();
                 textBox1.Text = "你的电脑已经非常干净。";
                 button1.Text = "分    析";
 
