@@ -24,6 +24,7 @@ namespace ume
         }
         public void Files()
         {
+            
             string path = @"C:\Users\Administrator\AppData\Local\Temp";
             string[]t=Directory.GetFiles(path);
             foreach (string i in t)
@@ -36,17 +37,18 @@ namespace ume
                 {
                     
                    // MessageBox.Show(i + "=yes");
-                    FileInfo f = new FileInfo(i);
+                    var fileInfo = new FileInfo(i);
         
-                    int l=int.Parse(f.Length.ToString());
+                    int l=int.Parse(fileInfo.Length.ToString());
                     float ls = l / 1046529; //ls计算文件大小               
                    // MessageBox.Show(ls.ToString()+".mb");
                     try
                     {
                         File.Delete(i);
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        throw;
                     }
                 }
                 else
@@ -116,7 +118,7 @@ namespace ume
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -125,7 +127,13 @@ namespace ume
         int f = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            var a = "";
+            if (a.Equals(""))
+            {
+
+                
+            }
+
             if (i<=0)
             {
                 i++;

@@ -63,7 +63,7 @@
             this.textBox1.Size = new System.Drawing.Size(895, 404);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "\r\n";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // Form1
             // 
