@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace ume
 {
@@ -24,38 +19,38 @@ namespace ume
         }
         public void Files()
         {
-            
+
             string path = @"C:\Users\Administrator\AppData\Local\Temp";
-            string[]t=Directory.GetFiles(path);
+            string[] t = Directory.GetFiles(path);
             foreach (string i in t)
             {
                 // MessageBox.Show(i);
                 //MessageBox.Show(i);
-              string cook = @"\S\.\S";
-              bool b = Regex.IsMatch(i,cook);
+                string cook = @"\S\.\S";
+                bool b = Regex.IsMatch(i, cook);
                 if (b)
                 {
-                    
-                   // MessageBox.Show(i + "=yes");
+
+                    // MessageBox.Show(i + "=yes");
                     var fileInfo = new FileInfo(i);
-        
-                    int l=int.Parse(fileInfo.Length.ToString());
+
+                    int l = int.Parse(fileInfo.Length.ToString());
                     float ls = l / 1046529; //ls计算文件大小               
-                   // MessageBox.Show(ls.ToString()+".mb");
+                                            // MessageBox.Show(ls.ToString()+".mb");
                     try
                     {
                         File.Delete(i);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         throw;
                     }
                 }
                 else
                 {
-                   // MessageBox.Show(i+"=no");
+                    // MessageBox.Show(i+"=no");
                 }
-             // MessageBox.Show(i);
+                // MessageBox.Show(i);
 
             }
         }
@@ -117,13 +112,12 @@ namespace ume
         {
 
         }
-
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        int i=0;
+        int i = 0;
         int f = 0;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -131,17 +125,17 @@ namespace ume
             if (a.Equals(""))
             {
 
-                
+
             }
 
-            if (i<=0)
+            if (i <= 0)
             {
                 i++;
                 textBox1.Text = "";
                 button1.Text = "分 析 中";
                 button1.Enabled = false;
-              
-              
+
+
                 if (f == 1)
                 {
                     textBox1.Text += "视频音乐垃圾=0MB。\r\n"; time();
@@ -175,7 +169,7 @@ namespace ume
                 textBox1.Text += "分析完成。";
                 button1.Text = "清    理";
                 button1.Enabled = true;
-               
+
 
 
 
@@ -190,7 +184,8 @@ namespace ume
                 textBox1.Text = "你的电脑已经非常干净。";
                 button1.Text = "分    析";
 
-               
+
+
 
             }
 
